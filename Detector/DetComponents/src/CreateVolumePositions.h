@@ -20,7 +20,7 @@ class IGeoSvc;
  *
  */
 
-template <class Hits, class PositionedHit>
+template <class Hits>
 class CreateVolumePositions : public GaudiAlgorithm {
 public:
   CreateVolumePositions(const std::string& name, ISvcLocator* svcLoc);
@@ -43,7 +43,7 @@ private:
   /// Handle for hits (input collection with cellID)
   DataHandle<Hits> m_hits{"hits/hits", Gaudi::DataHandle::Reader, this};
   /// Handle for positioned hits (output collection)
-  DataHandle<PositionedHit> m_positionedHits{"hits/positionedHits", Gaudi::DataHandle::Writer, this};
+  DataHandle<Hits> m_positionedHits{"hits/positionedHits", Gaudi::DataHandle::Writer, this};
 };
 
 #endif /* DETCOMPONENTS_CREATEVOLUMEPOSITIONS_H */

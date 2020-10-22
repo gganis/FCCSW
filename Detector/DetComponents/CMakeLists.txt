@@ -15,8 +15,8 @@ find_package(Eigen)
 
 gaudi_add_module(DetComponents
                  src/*.cpp
-                 INCLUDE_DIRS GaudiKernel ROOT DD4hep Geant4 FWCore DetInterface DetSegmentation DetCommon Eigen FCCEDM
-                 LINK_LIBRARIES GaudiKernel ROOT DD4hep ${DD4hep_COMPONENT_LIBRARIES} DetSegmentation DetCommon  FWCore FCCEDM)
+                 INCLUDE_DIRS GaudiKernel ROOT DD4hep Geant4 FWCore DetInterface DetSegmentation DetCommon Eigen 
+                 LINK_LIBRARIES GaudiKernel ROOT DD4hep ${DD4hep_COMPONENT_LIBRARIES} DetSegmentation DetCommon  FWCore EDM4HEP::edm4hep)
 target_link_libraries(DetComponents ${Geant4_LIBRARIES})
 
 include(CTest)
