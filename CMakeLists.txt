@@ -1,4 +1,6 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8.5)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.12.0)
+
+cmake_policy(SET CMP0074 NEW)
 
 option(SAS "Whether to run static code analysis with SAS." OFF)
 if (SAS)
@@ -83,8 +85,8 @@ install(FILES ${CMAKE_BINARY_DIR}/setup.sh
 
 find_package(FCCEDM)
 
-gaudi_project(FCCSW  v0r13
+gaudi_project(FCCSW  v0r15
               USE K4FWCore v0r1
-              USE Gaudi v33r1 )
+              USE Gaudi v34r0 )
 
 
